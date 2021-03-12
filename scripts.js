@@ -1,0 +1,1 @@
+document.write("JavaScript - BODY 1");
