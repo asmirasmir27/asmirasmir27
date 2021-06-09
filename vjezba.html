@@ -9,11 +9,41 @@
 <body>
     <script>
 
-        alert("Hello!")
+       /* alert("Hello!")
         document.write("Hello");
         //ovdje cu napisati jedan komentar
         let q = "asmir"
-        document.write(q);
+        document.write(q);*/
+
+        /*function ssss(a, b, c) {
+            return a+b+c;
+        }
+        var result = ssss(5, 6, 7);
+        document.write(result);
+        console.log(result);*/
+
+      // objekti // var cars = {marka:"mercedes", model:"A klasa", godina:"2006", boja:"crvena"};
+
+        /*var mojeAuto = new Object();
+        mojeAuto.marka = "Mercedes";
+        mojeAuto.model = "A klasa";
+        mojeAuto.godina = 2006
+        mojeAuto.boja = "crvena";
+
+        console.log(mojeAuto.boja + " " + mojeAuto.godina);*/
+
+        function Cars (marka, model, godina, boja) {
+            this.marka = marka;
+            this.model = model;
+            this.godina = godina;
+            this.boja = boja;
+        } 
+        var auto1 = new Cars("mercedes", "A", 2006, "crvena");
+
+        document.write(auto1.marka)
+
+
+       
 
 
     </script>

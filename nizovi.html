@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    var cars = ["mercedes", "audi", "bmw", "ford", "ferari"];
+    document.write("Najbolji auto je : " + cars[0]);
+    console.log(cars.toString());
+    console.log(cars.sort());
+
+    var newLenght = cars.push("honda");
+    console.log(cars.toString());
+
+
+    for (let i = 0; i < cars.length; i++) {
+        console.log(cars[i]);
+    }
+     
+
+    for(let property in cars) {
+        console.log(property);
+    }
+
+
+    for(let propertyyy of cars) {
+        console.log(propertyyy);
+    }
+
+
+
+
+    </script>
+</body>
+</html>

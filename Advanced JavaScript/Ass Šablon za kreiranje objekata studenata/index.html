@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+</head>
+
+<body>
+
+    <script>
+
+        function Student(name, address, phone, course) {
+            this.name = name;
+            this.address = address;
+            this.phone = phone;
+            this.course = course;
+
+
+            this.getInfo = function () {
+                return "Name: " + this.name + "\n" +
+                    "Address: " + this.address + "\n" +
+                    "Phone: " + this.phone + "\n" +
+                    "Course: " + this.course
+            }
+        }
+
+        let student1 = new Student("Asmir", "Kakanj", "061333333", "Istorija");
+        let student2 = new Student("Milan", "Sarajevo", "061444444", "Geografija");
+        let student3 = new Student("Dino", "Mostar", "063555555", "Matematika");
+
+        let student1info = student1.getInfo();
+        let student2info = student2.getInfo();
+        let student3info = student3.getInfo();
+
+        console.log( student1info);
+        console.log( student2info);
+        console.log( student3info);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

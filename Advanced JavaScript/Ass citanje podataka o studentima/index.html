@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-Citanje podataka o studentima</title>
+</head>
+
+<body>
+    <style>
+        #div1 {
+            white-space: pre-wrap;
+        }
+    </style>
+    <div id="div1"></div>
+    <script>
+        (async function getData() {
+            try {
+                firstDiv = document.getElementById('div1');
+                let data = await fetch('https://v-dresevic.github.io/Advanced-JavaScript-Programming/data/students.txt');
+                if (data.status !== 200) {
+                    throw new Error("Error while reading file.");
+                }
+                let text = await data.text();
+                var nizSplit = text.split('\n');
+
+                for (let i = 0; i < nizSplit.length; i++) {
+                    console.log(nizSplit[i]);
+
+                }
+
+                class Student {
+                    constructor(name, adress, phone, course) {
+                        this.name = name;
+                        this.adress = adress;
+                        this.phone = phone;
+                        this.course = course;
+                    }
+
+                    getInfo() {
+                        return "Name: " + this.name + "\n" +
+                            "Adress: " + this.adress + "\n" +
+                            "Phone: " + this.phone + "\n" +
+                            "Course: " + this.course + "\r";
+                    }
+
+                }
+
+                var student1 = new Student(nizSplit[0], nizSplit[1], nizSplit[2], nizSplit[3]);
+                var student2 = new Student(nizSplit[4], nizSplit[5], nizSplit[6], nizSplit[7]);
+                var student3 = new Student(nizSplit[8], nizSplit[9], nizSplit[10], nizSplit[11]);
+                var student4 = new Student(nizSplit[12], nizSplit[13], nizSplit[14], nizSplit[15]);
+                var student5 = new Student(nizSplit[16], nizSplit[17], nizSplit[18], nizSplit[19]);
+
+                console.log(student1.getInfo());
+                console.log(student2.getInfo());
+                console.log(student3.getInfo());
+                console.log(student4.getInfo());
+                console.log(student5.getInfo());
+
+                document.getElementById("div1").innerHTML =
+                    student1.getInfo().concat(student2.getInfo()).concat(student3.getInfo()).concat(student4.getInfo()).concat(student5.getInfo());
+
+
+            } catch (err) {
+                firstDiv.innerHTML = 'Fetch problem: ' + err.message;
+            }
+        })()
+    </script>
+</body>
+
+</html>
